@@ -1,0 +1,12 @@
+{
+  "_fv": 73,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Steal Chance",
+    "description": "Modify chances of gaining skills",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 5
+  }
+}

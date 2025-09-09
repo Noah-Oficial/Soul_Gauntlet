@@ -1,0 +1,10 @@
+{
+  "tremblesfx": {
+    "sounds": [
+      {
+        "name": "soul_gauntlet:tremblesfx",
+        "stream": false
+      }
+    ]
+  }
+}

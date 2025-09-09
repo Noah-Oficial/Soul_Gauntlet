@@ -1,0 +1,11 @@
+{
+  "_fv": 73,
+  "_type": "tab",
+  "definition": {
+    "name": "Soul Gauntlet",
+    "icon": {
+      "value": "CUSTOM:Soulgauntlet"
+    },
+    "showSearch": false
+  }
+}

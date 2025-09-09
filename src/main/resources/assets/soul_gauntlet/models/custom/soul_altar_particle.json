@@ -1,0 +1,6 @@
+{
+  "parent": "soul_gauntlet:displaysettings/gauntlet",
+  "textures": {
+    "particle": "soul_gauntlet:block/soulaltartexture"
+  }
+}

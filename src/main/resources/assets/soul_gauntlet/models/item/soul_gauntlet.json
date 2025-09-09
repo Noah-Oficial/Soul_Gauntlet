@@ -1,0 +1,6 @@
+{
+  "parent": "soul_gauntlet:displaysettings/gauntlet",
+  "textures": {
+    "layer0": "soul_gauntlet:item/gauntlet_texture"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "soul_gauntlet_recipe_group",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aea"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:copper_ingot"
+    },
+    "b": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "c": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "d": {
+      "item": "soul_gauntlet:soulgem"
+    },
+    "e": {
+      "item": "soul_gauntlet:gauntletdamaged"
+    }
+  },
+  "result": {
+    "item": "soul_gauntlet:soulgauntlet",
+    "count": 1
+  }
+}

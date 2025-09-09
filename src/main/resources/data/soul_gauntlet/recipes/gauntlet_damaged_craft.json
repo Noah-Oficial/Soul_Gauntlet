@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "soul_gauntlet_recipe_group",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "minecraft:obsidian"
+    },
+    "d": {
+      "item": "soul_gauntlet:gauntletblueprint"
+    }
+  },
+  "result": {
+    "item": "soul_gauntlet:gauntletdamaged",
+    "count": 1
+  }
+}
