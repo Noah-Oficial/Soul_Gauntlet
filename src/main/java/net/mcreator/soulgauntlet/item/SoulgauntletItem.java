@@ -19,9 +19,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 
+import net.mcreator.soulgauntlet.procedures.CollectPowersProcedure;
 import net.mcreator.soulgauntlet.item.renderer.SoulgauntletItemRenderer;
 
 import java.util.function.Consumer;
@@ -110,5 +112,12 @@ public class SoulgauntletItem extends Item implements GeoItem {
 			return builder.build();
 		}
 		return super.getDefaultAttributeModifiers(equipmentSlot);
+	}
+
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		CollectPowersProcedure.execute(entity.level(), entity, sourceentity, itemstack);
+		return retval;
 	}
 }

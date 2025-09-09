@@ -19,7 +19,6 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.soulgauntlet.init.SoulGauntletModTabs;
 import net.mcreator.soulgauntlet.init.SoulGauntletModSounds;
-import net.mcreator.soulgauntlet.init.SoulGauntletModMenus;
 import net.mcreator.soulgauntlet.init.SoulGauntletModItems;
 import net.mcreator.soulgauntlet.init.SoulGauntletModEntities;
 
@@ -48,8 +47,6 @@ public class SoulGauntletMod {
 		SoulGauntletModEntities.REGISTRY.register(bus);
 
 		SoulGauntletModTabs.REGISTRY.register(bus);
-
-		SoulGauntletModMenus.REGISTRY.register(bus);
 
 		// Start of user code block mod init
 		// End of user code block mod init
