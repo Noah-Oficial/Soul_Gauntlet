@@ -25,8 +25,6 @@ public class SaviorButton2Procedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity, ItemStack itemstack) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof Player _player && !_player.level().isClientSide())
-			_player.displayClientMessage(Component.literal("---------------------------------------------------"), false);
 		if (MessageFilterProcedure.execute("<Part=" + Math.round(entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Message) : 0) + ">").contains("\u00A7c")) {
 			if (entity instanceof SaviorEntity animatable)
 				animatable.setTexture("_savior4");
@@ -48,7 +46,7 @@ public class SaviorButton2Procedure {
 				}
 			});
 		}
-		if ((entity instanceof SaviorEntity _datEntL8 && _datEntL8.getEntityData().get(SaviorEntity.DATA_Talks)) == false && (entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 0) {
+		if ((entity instanceof SaviorEntity _datEntL7 && _datEntL7.getEntityData().get(SaviorEntity.DATA_Talks)) == false && (entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 0) {
 			if (entity instanceof SaviorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, true);
 			if (entity instanceof SaviorEntity) {
@@ -84,9 +82,12 @@ public class SaviorButton2Procedure {
 				});
 			});
 		}
-		if ((entity instanceof SaviorEntity _datEntL23 && _datEntL23.getEntityData().get(SaviorEntity.DATA_Talks)) == false && (entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 1) {
+		if ((entity instanceof SaviorEntity _datEntL22 && _datEntL22.getEntityData().get(SaviorEntity.DATA_Talks)) == false && (entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 1) {
 			if (entity instanceof SaviorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, true);
+			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal("\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014"),
+						false);
 			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(MessageFilterProcedure.execute("<Part=" + Math.round(entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Message) : 0) + ">")), false);
 			if (entity instanceof SaviorEntity _datEntSetI)
@@ -165,6 +166,9 @@ public class SaviorButton2Procedure {
 			if (entity instanceof SaviorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, true);
 			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal("\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014"),
+						false);
+			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(MessageFilterProcedure.execute("<Part=" + Math.round(entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Message) : 0) + ">")), false);
 			if (entity instanceof SaviorEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(SaviorEntity.DATA_Message, (int) ((entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Message) : 0) + 1));
@@ -183,7 +187,7 @@ public class SaviorButton2Procedure {
 		}
 		if ((entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 4
 				&& ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == SoulGauntletModItems.GAUNTLETDAMAGED.get() || itemstack.getOrCreateTag().getBoolean("Sacrif\u00EDcios") == true)
-				&& (entity instanceof SaviorEntity _datEntL77 && _datEntL77.getEntityData().get(SaviorEntity.DATA_Talks)) == false) {
+				&& (entity instanceof SaviorEntity _datEntL78 && _datEntL78.getEntityData().get(SaviorEntity.DATA_Talks)) == false) {
 			if (itemstack.getOrCreateTag().getBoolean("Sacrif\u00EDcios") == false) {
 				itemstack.getOrCreateTag().putBoolean("Sacrif\u00EDcios", true);
 				if (world instanceof ServerLevel _level)
@@ -198,6 +202,9 @@ public class SaviorButton2Procedure {
 			}
 			if (entity instanceof SaviorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, true);
+			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal("\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014"),
+						false);
 			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(MessageFilterProcedure.execute("<Part=" + Math.round(entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Message) : 0) + ">")), false);
 			if (entity instanceof SaviorEntity _datEntSetI)
@@ -229,7 +236,7 @@ public class SaviorButton2Procedure {
 		}
 		if ((entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 5
 				&& (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(SoulGauntletModItems.SOULGEM.get())) : false)
-				&& (entity instanceof SaviorEntity _datEntL102 && _datEntL102.getEntityData().get(SaviorEntity.DATA_Talks)) == false) {
+				&& (entity instanceof SaviorEntity _datEntL104 && _datEntL104.getEntityData().get(SaviorEntity.DATA_Talks)) == false) {
 			if (entity instanceof SaviorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, true);
 			if (entity instanceof SaviorEntity) {
@@ -265,9 +272,12 @@ public class SaviorButton2Procedure {
 		}
 		if ((entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Stage) : 0) == 6
 				&& (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(SoulGauntletModItems.SOULGEM.get())) : false)
-				&& (entity instanceof SaviorEntity _datEntL117 && _datEntL117.getEntityData().get(SaviorEntity.DATA_Talks)) == false) {
+				&& (entity instanceof SaviorEntity _datEntL119 && _datEntL119.getEntityData().get(SaviorEntity.DATA_Talks)) == false) {
 			if (entity instanceof SaviorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, true);
+			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal("\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014"),
+						false);
 			if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(MessageFilterProcedure.execute("<Part=" + Math.round(entity instanceof SaviorEntity _datEntI ? _datEntI.getEntityData().get(SaviorEntity.DATA_Message) : 0) + ">")), false);
 			if (entity instanceof SaviorEntity _datEntSetI)
@@ -280,10 +290,22 @@ public class SaviorButton2Procedure {
 				} else {
 					if (sourceentity instanceof ServerPlayer _serverPlayer)
 						_serverPlayer.awardRecipesByKey(new ResourceLocation[]{new ResourceLocation("soul_gauntlet:soul_gauntlet_craft")});
-					if (entity instanceof SaviorEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(SaviorEntity.DATA_Stage, 7);
-					if (entity instanceof SaviorEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, false);
+					SoulGauntletMod.queueServerWork(100, () -> {
+						if (entity instanceof SaviorEntity animatable)
+							animatable.setTexture("saviortexture1");
+						if (entity instanceof SaviorEntity) {
+							((SaviorEntity) entity).setAnimation("Transform4");
+						}
+						SoulGauntletMod.queueServerWork(20, () -> {
+							if (entity instanceof SaviorEntity) {
+								((SaviorEntity) entity).setAnimation("Idle");
+							}
+							if (entity instanceof SaviorEntity _datEntSetI)
+								_datEntSetI.getEntityData().set(SaviorEntity.DATA_Stage, 7);
+							if (entity instanceof SaviorEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(SaviorEntity.DATA_Talks, false);
+						});
+					});
 				}
 			});
 		}
