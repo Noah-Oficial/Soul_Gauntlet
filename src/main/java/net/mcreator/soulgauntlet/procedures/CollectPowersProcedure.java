@@ -12,7 +12,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.soulgauntlet.init.SoulGauntletModGameRules;
-import net.mcreator.soulgauntlet.SoulGauntletMod;
 
 public class CollectPowersProcedure {
 	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity, ItemStack itemstack) {
@@ -34,6 +33,8 @@ public class CollectPowersProcedure {
 					_player.displayClientMessage(Component.literal((Component.translatable("CollectPowers.Weaknesses").getString())), true);
 			}
 		}
-		SoulGauntletMod.LOGGER.info(itemstack.getOrCreateTag().getString("Slot1") + "" + itemstack.getOrCreateTag().getString("Slot2") + itemstack.getOrCreateTag().getString("Slot3"));
+		if (!(itemstack.getOrCreateTag().getString("Power")).equals("")) {
+			Button1Procedure.execute(itemstack);
+		}
 	}
 }

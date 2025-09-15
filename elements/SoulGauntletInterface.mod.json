@@ -2,10 +2,10 @@
   "_fv": 73,
   "_type": "gui",
   "definition": {
-    "type": 0,
+    "type": 1,
     "width": 0,
     "height": 0,
-    "inventoryOffsetX": 0,
+    "inventoryOffsetX": 999,
     "inventoryOffsetY": 0,
     "renderBgLayer": false,
     "doesPauseGame": false,
@@ -68,6 +68,54 @@
           },
           "x": 166,
           "y": 148,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_slot1",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "Slot1Select"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 158,
+          "y": 65,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_slot2",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "Slot2Select"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 164,
+          "y": 105,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_slot3",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "Slot3Select"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 160,
+          "y": 145,
           "locked": false
         }
       }

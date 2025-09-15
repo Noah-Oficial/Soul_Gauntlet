@@ -13,17 +13,24 @@ import software.bernie.geckolib.animatable.GeoItem;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 
+import net.mcreator.soulgauntlet.procedures.PassiveProcedure;
 import net.mcreator.soulgauntlet.procedures.CollectPowersProcedure;
+import net.mcreator.soulgauntlet.procedures.Button2Procedure;
 import net.mcreator.soulgauntlet.item.renderer.SoulgauntletItemRenderer;
 
 import java.util.function.Consumer;
@@ -115,9 +122,28 @@ public class SoulgauntletItem extends Item implements GeoItem {
 	}
 
 	@Override
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+		ItemStack itemstack = ar.getObject();
+		double x = entity.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
+
+		Button2Procedure.execute(itemstack);
+		return ar;
+	}
+
+	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
 		CollectPowersProcedure.execute(entity.level(), entity, sourceentity, itemstack);
 		return retval;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		if (selected)
+			PassiveProcedure.execute(itemstack);
 	}
 }

@@ -271,7 +271,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/soulgauntlet/world/inventory/SoulGauntletInterfaceMenu.java",
-          "src/main/java/net/mcreator/soulgauntlet/client/gui/SoulGauntletInterfaceScreen.java"
+          "src/main/java/net/mcreator/soulgauntlet/client/gui/SoulGauntletInterfaceScreen.java",
+          "src/main/java/net/mcreator/soulgauntlet/network/SoulGauntletInterfaceButtonMessage.java"
         ]
       },
       "path": "~/Interfaces"
@@ -383,6 +384,120 @@
         ]
       },
       "path": "~/Procedimentos/Soul Gauntlet/Interface"
+    },
+    {
+      "name": "Slot1Select",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_1_select",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/Slot1SelectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/Soul Gauntlet/Interface"
+    },
+    {
+      "name": "Slot2Select",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_2_select",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/Slot2SelectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/Soul Gauntlet/Interface"
+    },
+    {
+      "name": "Slot3Select",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_3_select",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/Slot3SelectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/Soul Gauntlet/Interface"
+    },
+    {
+      "name": "Button2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "button_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/Button2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/Soul Gauntlet/Poderes"
+    },
+    {
+      "name": "Button1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "button_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/Button1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/Soul Gauntlet/Poderes"
+    },
+    {
+      "name": "Passive",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "passive",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/PassiveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/Soul Gauntlet/Poderes"
     }
   ],
   "variable_elements": [],
@@ -400,50 +515,56 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
+      "item.soul_gauntlet.soulgauntlet": "Soul Gauntlet",
+      "gamerule.stealChance": "Steal Chance",
+      "CollectPowers.Success": "§aYou successfully stole the soul",
+      "CollectPowers.Weaknesses": "§cYou failed to steal the soul",
+      "gui.soul_gauntlet.visual_novel.label_message": "Message",
+      "gui.soul_gauntlet.soul_gauntlet_interface.label_slot1": "Slot1",
+      "item.soul_gauntlet.savior_spawn_egg": "Savior Spawn Egg",
+      "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
+      "Soul_Collector": "§bClaimed Souls:§d ",
+      "item.soul_gauntlet.soulgem": "Soul Gem",
       "gamerule.stealChance.description": "Modify chances of gaining skills",
       "item_group.soul_gauntlet.soul_gauntlet_itens": "Soul Gauntlet",
-      "item.soul_gauntlet.soulgauntlet": "Soul Gauntlet",
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot2": "",
       "subtitles.tremblesfx": "",
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot3": "",
       "entity.soul_gauntlet.savior": "Savior",
-      "gamerule.stealChance": "Steal Chance",
       "key.soul_gauntlet.select_power": "Select Power",
       "item.soul_gauntlet.gauntletblueprint": "Gauntlet Blueprint",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot2": "Slot2",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot3": "Slot3",
       "Savior_History": "\u003cPart\u003d1\u003e§b\u003c???\u003e A human...? It\u0027s been so long since anyone came here...\u003cPart\u003dEnd\u003e \u003cPart\u003d2\u003e§b\u003c???\u003e You must be wondering who I am, or what you can loot or kill around here, right? Human.\u003cPart\u003dEnd\u003e \u003cPart\u003d3\u003e§b\u003c???\u003e I am Tashia Dolrein. I used to be quite famous, back in the day.\u003cPart\u003dEnd\u003e \u003cPart\u003d4\u003e§c\u003cTashia Dolrein\u003e Before those traitors sealed me away...\u003cPart\u003dEnd\u003e \u003cPart\u003d5\u003e§b\u003cTashia Dolrein\u003e But I imagine you don’t know me — it has been a looooong time.\u003cPart\u003dEnd\u003e \u003cPart\u003d6\u003e§b\u003cTashia Dolrein\u003e Let’s skip the boring story and all that blah blah blah. I want to make a deal with you, human.\u003cPart\u003dEnd\u003e \u003cPart\u003d7\u003e§b\u003cTashia Dolrein\u003e I’ll give you the recipe to my power — something that brushes the edge of the divine...\u003cPart\u003dEnd\u003e \u003cPart\u003d8\u003e§b\u003cTashia Dolrein\u003e It’s just a simple gauntlet. Once you craft it, return to me and I’ll teach you how to enhance it.\u003cPart\u003dEnd\u003e \u003cPart\u003d9\u003e§c\u003cTashia Dolrein\u003e To become someone as terrifying as I am...\u003cPart\u003dEnd\u003e \u003cPart\u003d10\u003e§b\u003cTashia Dolrein\u003e Good luck, human.\u003cPart\u003dEnd\u003e \u003cPart\u003d11\u003e§b\u003cTashia Dolrein\u003e Welcome back, my dear apprentice...\u003cPart\u003dEnd\u003e \u003cPart\u003d12\u003e§b\u003cTashia Dolrein\u003e Though I can barely see with these eyes carved in stone, I can feel — you trusted me... and forged the gauntlet.\u003cPart\u003dEnd\u003e \u003cPart\u003d13\u003e§b\u003cTashia Dolrein\u003e But as you’ve likely noticed, it’s still just a shell. Its true power remains dormant...\u003cPart\u003dEnd\u003e \u003cPart\u003d14\u003e§b\u003cTashia Dolrein\u003e To awaken it, you’ll need to perform certain... sacrifices.\u003cPart\u003dEnd\u003e \u003cPart\u003d15\u003e§b\u003cTashia Dolrein\u003e After all, the essence of my power is rooted in sacrifice — it feeds on souls to grant your every desire.\u003cPart\u003dEnd\u003e \u003cPart\u003d16\u003e§b\u003cTashia Dolrein\u003e Now... touch me with the gauntlet, and I shall grant you my blessing.\u003cPart\u003dEnd\u003e \u003cPart\u003d17\u003e§b\u003cTashia Dolrein\u003e Very well... Now that I’ve blessed your gauntlet, you are ready to receive the Soul Gem.\u003cPart\u003dEnd\u003e \u003cPart\u003d18\u003e§b\u003cTashia Dolrein\u003e A special gem that will awaken the gauntlet’s true power. But as I said before... sacrifices will be required.\u003cPart\u003dEnd\u003e \u003cPart\u003d19\u003e§c\u003cTashia Dolrein\u003e Eliminate 100 of those filthy Villagers.\u003cPart\u003dEnd\u003e \u003cPart\u003d20\u003e§b\u003cTashia Dolrein\u003e Until next time, my dear apprentice...\u003cPart\u003dEnd\u003e \u003cPart\u003d21\u003e§b\u003cTashia Dolrein\u003e Hello again, my dear apprentice.\u003cPart\u003dEnd\u003e \u003cPart\u003d22\u003e§b\u003cTashia Dolrein\u003e The moment you reaped those 100 wretched souls, I felt a wave of power surge through the stone that binds me.\u003cPart\u003dEnd\u003e \u003cPart\u003d23\u003e§b\u003cTashia Dolrein\u003e I almost felt my mouth curl into a smile of joy... and then I remembered — I’m a statue.\u003cPart\u003dEnd\u003e \u003cPart\u003d24\u003e§b\u003cTashia Dolrein\u003e Now that you possess the gem, I shall grant you the recipe for the true §6Soul Gauntlet.\u003cPart\u003dEnd\u003e \u003cPart\u003d25\u003e§b\u003cTashia Dolrein\u003e Ah, how quickly you’ve grown... I said I would make a deal, and I kept my word.\u003cPart\u003dEnd\u003e \u003cPart\u003d26\u003e§b\u003cTashia Dolrein\u003e And what do I want in return? Why... absolutely nothing. Just enjoy the gift I’ve given you.\u003cPart\u003dEnd\u003e \u003cPart\u003d27\u003e§b\u003cTashia Dolrein\u003e Have fun harvesting those trembling, delicious souls... Each one brings you closer to true greatness.\u003cPart\u003dEnd\u003e \u003cPart\u003d28\u003e§b\u003cTashia Dolrein\u003e And perhaps... brings me closer to mine, too.\u003cPart\u003dEnd\u003e \u003cPart\u003d29\u003e§b\u003cTashia Dolrein\u003e Until we meet again... and of that, I am certain.\u003cPart\u003dEnd\u003e\u003cPart\u003d30\u003e\u003cPart\u003dEnd\u003e",
-      "CollectPowers.Success": "§aYou successfully stole the soul",
-      "CollectPowers.Weaknesses": "§cYou failed to steal the soul",
-      "gui.soul_gauntlet.visual_novel.label_message": "Message",
       "item.soul_gauntlet.gauntletdamaged": "Gauntlet Damaged",
       "gui.soul_gauntlet.soul_gauntlet_interface.button_slot": "Slot 1",
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": ""
+    },
+    "pt_br": {
+      "item.soul_gauntlet.soulgauntlet": "Soul Gauntlet",
+      "gamerule.stealChance": "Steal Chance",
+      "CollectPowers.Success": "§aVocê roubou a alma com sucesso",
+      "CollectPowers.Weaknesses": "§cVocê fracassou em roubar a alma",
+      "gui.soul_gauntlet.visual_novel.label_message": "Message",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot1": "Slot1",
       "item.soul_gauntlet.savior_spawn_egg": "Savior Spawn Egg",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
-      "Soul_Collector": "§bClaimed Souls:§d ",
-      "item.soul_gauntlet.soulgem": "Soul Gem"
-    },
-    "pt_br": {
+      "Soul_Collector": "§bAlmas Coletadas:§d ",
+      "item.soul_gauntlet.soulgem": "Soul Gem",
       "item_group.soul_gauntlet.soul_gauntlet_itens": "Soul Gauntlet",
       "gamerule.stealChance.description": "Modify chances of gaining skills",
-      "item.soul_gauntlet.soulgauntlet": "Soul Gauntlet",
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot2": "",
       "subtitles.tremblesfx": "",
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot3": "",
       "entity.soul_gauntlet.savior": "Savior",
-      "gamerule.stealChance": "Steal Chance",
       "key.soul_gauntlet.select_power": "Select Power",
       "item.soul_gauntlet.gauntletblueprint": "Gauntlet Blueprint",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot2": "Slot2",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot3": "Slot3",
       "Savior_History": "\u003cPart\u003d1\u003e§b\u003c???\u003e Um humano...? Faz tanto tempo desde que alguém apareceu por aqui...\u003cPart\u003dEnd\u003e \u003cPart\u003d2\u003e§b\u003c???\u003e Você deve estar se perguntando quem eu sou, ou o que pode saquear ou matar por aqui, certo? Humano.\u003cPart\u003dEnd\u003e \u003cPart\u003d3\u003e§b\u003c???\u003e Eu sou Tashia Dolrein. Eu costumava ser bem famosa, antigamente.\u003cPart\u003dEnd\u003e \u003cPart\u003d4\u003e§c\u003cTashia Dolrein\u003e Antes daqueles traidores me selarem...\u003cPart\u003dEnd\u003e \u003cPart\u003d5\u003e§b\u003cTashia Dolrein\u003e Mas imagino que você não me conheça — já faz muuuuuito tempo.\u003cPart\u003dEnd\u003e \u003cPart\u003d6\u003e§b\u003cTashia Dolrein\u003e Vamos pular essa história chata e todo esse blá blá blá. Quero fazer um acordo com você, humano.\u003cPart\u003dEnd\u003e \u003cPart\u003d7\u003e§b\u003cTashia Dolrein\u003e Vou te dar a receita do meu poder — algo que toca os limites do divino...\u003cPart\u003dEnd\u003e \u003cPart\u003d8\u003e§b\u003cTashia Dolrein\u003e É só uma manopla simples. Depois que você fabricá-la, volte aqui e eu vou te ensinar como aprimorá-la.\u003cPart\u003dEnd\u003e \u003cPart\u003d9\u003e§c\u003cTashia Dolrein\u003e Para se tornar alguém tão terrível quanto eu...\u003cPart\u003dEnd\u003e \u003cPart\u003d10\u003e§b\u003cTashia Dolrein\u003e Boa sorte, humano.\u003cPart\u003dEnd\u003e \u003cPart\u003d11\u003e§b\u003cTashia Dolrein\u003e Bem-vindo de volta, meu caro aprendiz...\u003cPart\u003dEnd\u003e \u003cPart\u003d12\u003e§b\u003cTashia Dolrein\u003e Embora eu mal enxergue com estes olhos esculpidos em pedra, posso sentir — você confiou em mim... e forjou a manopla.\u003cPart\u003dEnd\u003e \u003cPart\u003d13\u003e§b\u003cTashia Dolrein\u003e Mas como já deve ter percebido, ela ainda é apenas uma casca. Seu verdadeiro poder continua adormecido...\u003cPart\u003dEnd\u003e \u003cPart\u003d14\u003e§b\u003cTashia Dolrein\u003e Para despertá-lo, será necessário realizar certos... sacrifícios.\u003cPart\u003dEnd\u003e \u003cPart\u003d15\u003e§b\u003cTashia Dolrein\u003e Afinal, a essência do meu poder é fundamentada no sacrifício — ela se alimenta de almas para satisfazer cada um dos seus desejos.\u003cPart\u003dEnd\u003e \u003cPart\u003d16\u003e§b\u003cTashia Dolrein\u003e Agora... toque em mim com a manopla, e eu lhe concederei minha bênção.\u003cPart\u003dEnd\u003e \u003cPart\u003d17\u003e§b\u003cTashia Dolrein\u003e Muito bem... Agora que abençoei sua manopla, você está pronto para receber a Gema da Alma.\u003cPart\u003dEnd\u003e \u003cPart\u003d18\u003e§b\u003cTashia Dolrein\u003e Uma gema especial que despertará o verdadeiro poder da manopla. Mas, como eu já disse... serão necessários sacrifícios.\u003cPart\u003dEnd\u003e \u003cPart\u003d19\u003e§c\u003cTashia Dolrein\u003e Elimine 100 daqueles nojentos Aldeões.\u003cPart\u003dEnd\u003e \u003cPart\u003d20\u003e§b\u003cTashia Dolrein\u003e Até a próxima, meu caro aprendiz...\u003cPart\u003dEnd\u003e \u003cPart\u003d21\u003e§b\u003cTashia Dolrein\u003e Olá, meu caro aprendiz.\u003cPart\u003dEnd\u003e \u003cPart\u003d22\u003e§b\u003cTashia Dolrein\u003e No instante em que você ceifou aquelas 100 almas miseráveis, senti uma onda de poder atravessar a pedra que me aprisiona.\u003cPart\u003dEnd\u003e \u003cPart\u003d23\u003e§b\u003cTashia Dolrein\u003e Quase pude sentir minha boca se curvar em um sorriso de alegria... e então me lembrei — sou uma estátua.\u003cPart\u003dEnd\u003e \u003cPart\u003d24\u003e§b\u003cTashia Dolrein\u003e Agora que possui a gema, vou lhe conceder a receita da verdadeira §6Manopla da Alma.\u003cPart\u003dEnd\u003e \u003cPart\u003d25\u003e§b\u003cTashia Dolrein\u003e Ah, como você cresceu rápido... Eu disse que faria um acordo, e cumpri com minha palavra.\u003cPart\u003dEnd\u003e \u003cPart\u003d26\u003e§b\u003cTashia Dolrein\u003e E o que quero em troca? Ora... absolutamente nada. Apenas aproveite o presente que lhe dei.\u003cPart\u003dEnd\u003e \u003cPart\u003d27\u003e§b\u003cTashia Dolrein\u003e Divirta-se colhendo essas almas trêmulas e deliciosas... Cada uma te aproxima da verdadeira grandeza.\u003cPart\u003dEnd\u003e \u003cPart\u003d28\u003e§b\u003cTashia Dolrein\u003e E talvez... me aproxime da minha também.\u003cPart\u003dEnd\u003e \u003cPart\u003d29\u003e§b\u003cTashia Dolrein\u003e Até que nos encontremos novamente... e disso, eu tenho certeza.\u003cPart\u003dEnd\u003e \u003cPart\u003d30\u003e\u003cPart\u003dEnd\u003e",
-      "CollectPowers.Success": "§aVocê roubou a alma com sucesso",
-      "CollectPowers.Weaknesses": "§cVocê fracassou em roubar a alma",
-      "gui.soul_gauntlet.visual_novel.label_message": "Message",
       "item.soul_gauntlet.gauntletdamaged": "Soul Gauntlet",
       "gui.soul_gauntlet.soul_gauntlet_interface.button_slot": "Slot 1",
-      "gui.soul_gauntlet.soul_gauntlet_interface.label_slot1": "Slot1",
-      "item.soul_gauntlet.savior_spawn_egg": "Savior Spawn Egg",
-      "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
-      "Soul_Collector": "§bAlmas Coletadas:§d ",
-      "item.soul_gauntlet.soulgem": "Soul Gem"
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": ""
     }
   },
   "foldersRoot": {
@@ -466,6 +587,10 @@
             "children": [
               {
                 "name": "Interface",
+                "children": []
+              },
+              {
+                "name": "Poderes",
                 "children": []
               }
             ]

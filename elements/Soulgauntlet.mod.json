@@ -38,8 +38,14 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "Button2"
+    },
     "onEntityHitWith": {
       "name": "CollectPowers"
+    },
+    "onItemInUseTick": {
+      "name": "Passive"
     },
     "isFood": false,
     "nutritionalValue": 4,
