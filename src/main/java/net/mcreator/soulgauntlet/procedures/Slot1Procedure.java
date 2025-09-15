@@ -10,11 +10,12 @@ public class Slot1Procedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		String Data = "";
+		String Texto = "";
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == SoulGauntletModItems.SOULGAUNTLET.get()
 				&& !(((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("Slot1")).equals(""))) {
-			Data = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("Slot1");
-			return "\u00A7f" + ((Data.replace("minecraft:", "")).substring(0, 1)).toUpperCase() + (Data.replace("minecraft:", "")).substring(1, (Data.replace("minecraft:", "")).length());
+			Texto = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("Slot1");
+			Texto = Texto.replace("_", " ");
+			return "\u00A7f" + (Texto.substring((int) (Texto.indexOf(":", 1) + 1), (int) (Texto.indexOf(":", 1) + 2))).toUpperCase() + Texto.substring((int) (Texto.indexOf(":", 1) + 2), (Texto).length());
 		}
 		return "\u00A7f";
 	}

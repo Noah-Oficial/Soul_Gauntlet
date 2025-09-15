@@ -308,7 +308,8 @@
             "name": "world",
             "type": "world"
           }
-        ]
+        ],
+        "return_type": "string"
       },
       "path": "~/Procedimentos/Soul Gauntlet/Interface"
     },
@@ -492,12 +493,26 @@
         ],
         "dependencies": [
           {
-            "name": "itemstack",
-            "type": "itemstack"
+            "name": "entity",
+            "type": "entity"
           }
-        ]
+        ],
+        "return_type": "logic"
       },
       "path": "~/Procedimentos/Soul Gauntlet/Poderes"
+    },
+    {
+      "name": "SoulGauntletPower",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_gauntlet_power",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/client/screens/SoulGauntletPowerOverlay.java"
+        ]
+      },
+      "path": "~/Interfaces/Sobreposicoes"
     }
   ],
   "variable_elements": [],
@@ -603,7 +618,12 @@
       },
       {
         "name": "Interfaces",
-        "children": []
+        "children": [
+          {
+            "name": "Sobreposicoes",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Detalhes",

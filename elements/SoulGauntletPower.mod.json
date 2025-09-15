@@ -1,0 +1,39 @@
+{
+  "_fv": 73,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_open_gui",
+          "text": {
+            "fixedValue": "",
+            "name": "OpenGui"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 342,
+          "y": 223,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "Passive"
+    },
+    "gridSettings": {
+      "sx": 20,
+      "sy": 23,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
