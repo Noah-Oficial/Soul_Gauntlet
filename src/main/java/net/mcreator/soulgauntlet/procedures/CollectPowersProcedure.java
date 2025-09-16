@@ -34,7 +34,7 @@ public class CollectPowersProcedure {
 			}
 		}
 		if (!(itemstack.getOrCreateTag().getString("Power")).equals("")) {
-			Button1Procedure.execute(itemstack);
+			Button1Procedure.execute(entity, itemstack);
 		}
 	}
 }

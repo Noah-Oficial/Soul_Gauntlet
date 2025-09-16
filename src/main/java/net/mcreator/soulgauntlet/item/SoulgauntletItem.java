@@ -129,7 +129,7 @@ public class SoulgauntletItem extends Item implements GeoItem {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		Button2Procedure.execute(itemstack);
+		Button2Procedure.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
@@ -144,6 +144,6 @@ public class SoulgauntletItem extends Item implements GeoItem {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			PassiveProcedure.execute(entity);
+			PassiveProcedure.execute(world, entity);
 	}
 }
