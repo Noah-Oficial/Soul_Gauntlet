@@ -33,7 +33,7 @@ public class SoulGauntletPowerOverlay {
 			y = entity.getY();
 			z = entity.getZ();
 		}
-		if (PassiveProcedure.execute(world, entity)) {
+		if (PassiveProcedure.execute(world, x, y, z, entity)) {
 			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
 
 					OpenGuiProcedure.execute(world, x, y, z, entity), w - 85, h - 17, -1, false);
