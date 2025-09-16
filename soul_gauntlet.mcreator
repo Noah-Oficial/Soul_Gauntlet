@@ -653,6 +653,10 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Efeitos",
+            "children": []
           }
         ]
       },
@@ -704,6 +708,10 @@
       },
       {
         "name": "Externos",
+        "children": []
+      },
+      {
+        "name": "Efeitos",
         "children": []
       }
     ]
