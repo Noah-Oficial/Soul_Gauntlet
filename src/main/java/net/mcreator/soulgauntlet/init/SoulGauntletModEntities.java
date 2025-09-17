@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.soulgauntlet.entity.SaviorEntity;
+import net.mcreator.soulgauntlet.entity.EggEntity;
 import net.mcreator.soulgauntlet.SoulGauntletMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -24,6 +25,8 @@ public class SoulGauntletModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SoulGauntletMod.MODID);
 	public static final RegistryObject<EntityType<SaviorEntity>> SAVIOR = register("savior",
 			EntityType.Builder.<SaviorEntity>of(SaviorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SaviorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<EggEntity>> EGG = register("egg",
+			EntityType.Builder.<EggEntity>of(EggEntity::new, MobCategory.MISC).setCustomClientFactory(EggEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

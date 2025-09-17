@@ -557,6 +557,19 @@
         ]
       },
       "path": "~/Interfaces/Sobreposicoes"
+    },
+    {
+      "name": "Egg",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "egg",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/entity/EggEntity.java"
+        ]
+      },
+      "path": "~/Projetios"
     }
   ],
   "variable_elements": [],
@@ -712,6 +725,10 @@
       },
       {
         "name": "Efeitos",
+        "children": []
+      },
+      {
+        "name": "Projetios",
         "children": []
       }
     ]
