@@ -14,7 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.mcreator.soulgauntlet.init.SoulGauntletModGameRules;
 
 public class CollectPowersProcedure {
-	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity, ItemStack itemstack) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity, ItemStack itemstack) {
 		if (entity == null || sourceentity == null)
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 0) {
@@ -34,7 +34,7 @@ public class CollectPowersProcedure {
 			}
 		}
 		if (!(itemstack.getOrCreateTag().getString("Power")).equals("")) {
-			Button1Procedure.execute(entity, sourceentity, itemstack);
+			Button1Procedure.execute(world, x, y, z, entity, sourceentity, itemstack);
 		}
 	}
 }

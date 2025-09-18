@@ -212,6 +212,18 @@
             "type": "itemstack"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -504,6 +516,22 @@
           {
             "name": "itemstack",
             "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -567,6 +595,89 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/soulgauntlet/entity/EggEntity.java"
+        ]
+      },
+      "path": "~/Projetios"
+    },
+    {
+      "name": "Damage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/DamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projetios/Warden_Projetil_Config"
+    },
+    {
+      "name": "Remove",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/RemoveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projetios/Warden_Projetil_Config"
+    },
+    {
+      "name": "Warden",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "warden",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/entity/WardenEntity.java"
         ]
       },
       "path": "~/Projetios"
@@ -729,7 +840,12 @@
       },
       {
         "name": "Projetios",
-        "children": []
+        "children": [
+          {
+            "name": "Warden_Projetil_Config",
+            "children": []
+          }
+        ]
       }
     ]
   },

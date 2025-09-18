@@ -19,5 +19,6 @@ public class SoulGauntletModEntityRenderers {
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(SoulGauntletModEntities.SAVIOR.get(), SaviorRenderer::new);
 		event.registerEntityRenderer(SoulGauntletModEntities.EGG.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(SoulGauntletModEntities.WARDEN.get(), ThrownItemRenderer::new);
 	}
 }

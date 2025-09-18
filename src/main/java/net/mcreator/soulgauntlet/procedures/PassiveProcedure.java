@@ -3,6 +3,8 @@ package net.mcreator.soulgauntlet.procedures;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
@@ -21,11 +23,14 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Difficulty;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Map;
+import java.util.List;
+import java.util.Comparator;
 
 public class PassiveProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -173,6 +178,45 @@ public class PassiveProcedure {
 					if (entity instanceof Player _player) {
 						_player.getAbilities().mayfly = false;
 						_player.onUpdateAbilities();
+					}
+				}
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:dolphin")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 0, 9));
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.DOLPHIN, x, y, z, 5, 1, 2, 1, 0.1);
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:iron_golem")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 0, 2));
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 5, 1, 2, 1, 0.1);
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:slime")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 0, 4));
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.ITEM_SLIME, x, y, z, 5, 1, 2, 1, 0.1);
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:cave_spider")) {
+				if (entity instanceof LivingEntity _livEnt99 && _livEnt99.hasEffect(MobEffects.POISON)) {
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.POISON);
+				}
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:warden")) {
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					for (Entity entityiterator : _entfound) {
+						if (!(entityiterator == entity)) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 4));
+						} else {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 0, 2));
+						}
 					}
 				}
 			}

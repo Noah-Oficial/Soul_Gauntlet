@@ -136,7 +136,7 @@ public class SoulgauntletItem extends Item implements GeoItem {
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
-		CollectPowersProcedure.execute(entity.level(), entity, sourceentity, itemstack);
+		CollectPowersProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity, itemstack);
 		return retval;
 	}
 
