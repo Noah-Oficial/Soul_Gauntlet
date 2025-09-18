@@ -76,7 +76,7 @@ public class WardenEntity extends AbstractArrow implements ItemSupplier {
 	@Override
 	public void tick() {
 		super.tick();
-		RemoveProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this.getOwner());
+		RemoveProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}
