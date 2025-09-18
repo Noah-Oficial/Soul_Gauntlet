@@ -22,6 +22,8 @@ import net.mcreator.soulgauntlet.init.SoulGauntletModSounds;
 import net.mcreator.soulgauntlet.init.SoulGauntletModMenus;
 import net.mcreator.soulgauntlet.init.SoulGauntletModItems;
 import net.mcreator.soulgauntlet.init.SoulGauntletModEntities;
+import net.mcreator.soulgauntlet.init.SoulGauntletModBlocks;
+import net.mcreator.soulgauntlet.init.SoulGauntletModBlockEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -43,7 +45,8 @@ public class SoulGauntletMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		SoulGauntletModSounds.REGISTRY.register(bus);
-
+		SoulGauntletModBlocks.REGISTRY.register(bus);
+		SoulGauntletModBlockEntities.REGISTRY.register(bus);
 		SoulGauntletModItems.REGISTRY.register(bus);
 		SoulGauntletModEntities.REGISTRY.register(bus);
 

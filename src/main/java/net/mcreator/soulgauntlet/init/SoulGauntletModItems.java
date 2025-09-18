@@ -15,6 +15,7 @@ import net.mcreator.soulgauntlet.item.SoulgemItem;
 import net.mcreator.soulgauntlet.item.SoulgauntletItem;
 import net.mcreator.soulgauntlet.item.GauntletdamagedItem;
 import net.mcreator.soulgauntlet.item.GauntletblueprintItem;
+import net.mcreator.soulgauntlet.block.display.SoulAltarDisplayItem;
 import net.mcreator.soulgauntlet.SoulGauntletMod;
 
 public class SoulGauntletModItems {
@@ -24,6 +25,7 @@ public class SoulGauntletModItems {
 	public static final RegistryObject<Item> GAUNTLETDAMAGED = REGISTRY.register("gauntletdamaged", () -> new GauntletdamagedItem());
 	public static final RegistryObject<Item> GAUNTLETBLUEPRINT = REGISTRY.register("gauntletblueprint", () -> new GauntletblueprintItem());
 	public static final RegistryObject<Item> SOULGEM = REGISTRY.register("soulgem", () -> new SoulgemItem());
+	public static final RegistryObject<Item> SOUL_ALTAR = REGISTRY.register(SoulGauntletModBlocks.SOUL_ALTAR.getId().getPath(), () -> new SoulAltarDisplayItem(SoulGauntletModBlocks.SOUL_ALTAR.get(), new Item.Properties()));
 	// Start of user code block custom items
 	// End of user code block custom items
 }

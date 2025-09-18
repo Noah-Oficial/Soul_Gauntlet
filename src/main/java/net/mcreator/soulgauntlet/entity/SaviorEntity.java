@@ -48,6 +48,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.soulgauntlet.procedures.SaviorButton2Procedure;
+import net.mcreator.soulgauntlet.procedures.ImortalidadeProcedure;
 import net.mcreator.soulgauntlet.init.SoulGauntletModEntities;
 
 public class SaviorEntity extends PathfinderMob implements GeoEntity {
@@ -203,6 +204,7 @@ public class SaviorEntity extends PathfinderMob implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		ImortalidadeProcedure.execute(this);
 		this.refreshDimensions();
 	}
 
@@ -246,7 +248,7 @@ public class SaviorEntity extends PathfinderMob implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 1000);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);

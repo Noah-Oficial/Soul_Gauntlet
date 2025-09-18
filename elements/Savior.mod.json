@@ -78,7 +78,7 @@
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 10,
+    "health": 1000,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": true,
@@ -124,6 +124,9 @@
     },
     "onRightClickedOn": {
       "name": "SaviorButton2"
+    },
+    "onMobTickUpdate": {
+      "name": "Imortalidade"
     },
     "hasAI": false,
     "aiBase": "(none)",
