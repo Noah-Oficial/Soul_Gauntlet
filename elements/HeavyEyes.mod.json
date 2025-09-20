@@ -1,0 +1,63 @@
+{
+  "_fv": 73,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Heavy Eyes",
+    "icon": "red_bed_29_je1",
+    "color": {
+      "value": -13395457,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredByMilk": false,
+    "isProtectedByTotem": true,
+    "isCuredbyHoney": true,
+    "modifiers": [
+      {
+        "attribute": {
+          "value": "MOVEMENT_SPEED"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "ATTACK_SPEED"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "JUMP_STRENGTH"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "NAMETAG_RENDER_DISTANCE"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "ATTACK_DAMAGE"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      },
+      {
+        "attribute": {
+          "value": "ENTITY_REACH"
+        },
+        "amount": -0.02,
+        "operation": "ADD_VALUE"
+      }
+    ]
+  }
+}

@@ -13,6 +13,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
@@ -26,7 +27,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.soulgauntlet.init.SoulGauntletModMobEffects;
 import net.mcreator.soulgauntlet.init.SoulGauntletModEntities;
+import net.mcreator.soulgauntlet.init.SoulGauntletModAttributes;
 import net.mcreator.soulgauntlet.entity.WardenEntity;
 import net.mcreator.soulgauntlet.SoulGauntletMod;
 
@@ -222,6 +225,29 @@ public class Button2Procedure {
 				_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 5, 1, 2, 1, 0.1);
 			if (entity instanceof Player _player)
 				_player.getCooldowns().addCooldown(itemstack.getItem(), 4000);
+		}
+		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:sheep")) {
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (!(entityiterator == entity)) {
+						if (!(entityiterator instanceof LivingEntity _livEnt68 && _livEnt68.getMobType() == MobType.UNDEAD)) {
+							if (!(3 - (entityiterator instanceof LivingEntity _livingEntity69 && _livingEntity69.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+									? _livingEntity69.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+									: 0) <= 0)) {
+								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+									_entity.addEffect(new MobEffectInstance(SoulGauntletModMobEffects.HEAVY_EYES.get(), 100,
+											(int) (3 - (entityiterator instanceof LivingEntity _livingEntity70 && _livingEntity70.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+													? _livingEntity70.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+													: 0))));
+							}
+						}
+					}
+				}
+			}
+			if (entity instanceof Player _player)
+				_player.getCooldowns().addCooldown(itemstack.getItem(), 5000);
 		}
 	}
 }

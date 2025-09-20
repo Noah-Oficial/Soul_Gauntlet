@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.LightningBolt;
@@ -23,6 +24,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
+
+import net.mcreator.soulgauntlet.init.SoulGauntletModMobEffects;
+import net.mcreator.soulgauntlet.init.SoulGauntletModAttributes;
 
 import java.util.List;
 import java.util.Comparator;
@@ -108,7 +112,7 @@ public class Button1Procedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.HARM, 0, 2));
 			}
 			if (entity.isUnderWater()) {
-				entity.setAirSupply(5);
+				entity.setAirSupply((int) (entity.getAirSupply() - 1));
 			}
 			if (new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -122,6 +126,19 @@ public class Button1Procedure {
 				}
 			}.checkGamemode(entity)) {
 				entity.clearFire();
+			}
+		}
+		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:sheep")) {
+			if (!(entity instanceof LivingEntity _livEnt48 && _livEnt48.getMobType() == MobType.UNDEAD)) {
+				if (!(3 - (entity instanceof LivingEntity _livingEntity49 && _livingEntity49.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+						? _livingEntity49.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+						: 0) <= 0)) {
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(SoulGauntletModMobEffects.HEAVY_EYES.get(), 100,
+								(int) (3 - (entity instanceof LivingEntity _livingEntity50 && _livingEntity50.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+										? _livingEntity50.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+										: 0))));
+				}
 			}
 		}
 	}
