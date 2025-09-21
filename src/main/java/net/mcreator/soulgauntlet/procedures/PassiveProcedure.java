@@ -27,6 +27,8 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.soulgauntlet.init.SoulGauntletModAttributes;
+
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Map;
 import java.util.List;
@@ -64,20 +66,28 @@ public class PassiveProcedure {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
 									if (itemstackiterator.getItem() == Items.MILK_BUCKET) {
 										if (world.getDifficulty() == Difficulty.PEACEFUL || world.getDifficulty() == Difficulty.EASY) {
-											Leites = Leites + 2;
+											Leites = (Leites + 2) * (entity instanceof LivingEntity _livingEntity24 && _livingEntity24.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+													? _livingEntity24.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+													: 0);
 										}
 										if (world.getDifficulty() == Difficulty.NORMAL) {
-											Leites = Leites + 1;
+											Leites = (Leites + 1) * (entity instanceof LivingEntity _livingEntity26 && _livingEntity26.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+													? _livingEntity26.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+													: 0);
 										}
 										if (world.getDifficulty() == Difficulty.HARD) {
-											Leites = Leites + 1;
+											Leites = (Leites + 1) * (entity instanceof LivingEntity _livingEntity28 && _livingEntity28.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+													? _livingEntity28.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+													: 0);
 											if (entity instanceof Player _player) {
 												ItemStack _stktoremove = new ItemStack(Items.MILK_BUCKET);
 												_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 											}
 										}
 										if (!(world.getDifficulty() == Difficulty.PEACEFUL) && !(world.getDifficulty() == Difficulty.EASY) && !(world.getDifficulty() == Difficulty.NORMAL) && !(world.getDifficulty() == Difficulty.HARD)) {
-											Leites = Leites + 1;
+											Leites = (Leites + 1) * (entity instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+													? _livingEntity34.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+													: 0);
 										}
 									}
 								}
@@ -115,8 +125,8 @@ public class PassiveProcedure {
 						&& !((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.GOLDEN_CARROT)
 						&& !((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.PORKCHOP)
 						&& !((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.COOKED_PORKCHOP)) {
-					if (Math.random() <= 0.05 && world instanceof ServerLevel _level63 && _level63.isVillage(BlockPos.containing(x, y, z))) {
-						if (Math.random() <= 0.5 && world.getDifficulty() == Difficulty.HARD && world instanceof ServerLevel _level65 && _level65.isVillage(BlockPos.containing(x, y, z)) && world.getLevelData().isRaining()) {
+					if (Math.random() <= 0.05 && world instanceof ServerLevel _level67 && _level67.isVillage(BlockPos.containing(x, y, z))) {
+						if (Math.random() <= 0.5 && world.getDifficulty() == Difficulty.HARD && world instanceof ServerLevel _level69 && _level69.isVillage(BlockPos.containing(x, y, z)) && world.getLevelData().isRaining()) {
 							if (entity instanceof LivingEntity _entity) {
 								ItemStack _setstack = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE).copy();
 								_setstack.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount());
@@ -134,7 +144,7 @@ public class PassiveProcedure {
 							}
 						}
 					} else {
-						if (world.getBiome(BlockPos.containing(x, y, z)).value().getBaseTemperature() * 100f >= 150 && world instanceof Level _lvl74 && _lvl74.isDay() || ("" + entity.level().dimension()).contains("minecraft:the_nether")) {
+						if (world.getBiome(BlockPos.containing(x, y, z)).value().getBaseTemperature() * 100f >= 150 && world instanceof Level _lvl78 && _lvl78.isDay() || ("" + entity.level().dimension()).contains("minecraft:the_nether")) {
 							if (entity instanceof LivingEntity _entity) {
 								ItemStack _setstack = new ItemStack(Items.COOKED_PORKCHOP).copy();
 								_setstack.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount());
@@ -157,7 +167,10 @@ public class PassiveProcedure {
 			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:chicken")) {
 				if (!world.getLevelData().isRaining()) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 20, 1));
+						_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 20,
+								(int) (1 * (entity instanceof LivingEntity _livingEntity88 && _livingEntity88.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+										? _livingEntity88.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+										: 0))));
 				}
 				if (world.getDifficulty() == Difficulty.PEACEFUL || new Object() {
 					public boolean checkGamemode(Entity _ent) {
@@ -183,24 +196,33 @@ public class PassiveProcedure {
 			}
 			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:dolphin")) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 0, 9));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 0,
+							(int) (9 * (entity instanceof LivingEntity _livingEntity95 && _livingEntity95.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity95.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.DOLPHIN, x, y, z, 5, 1, 2, 1, 0.1);
 			}
 			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:iron_golem")) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 0, 2));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 0,
+							(int) (2 * (entity instanceof LivingEntity _livingEntity99 && _livingEntity99.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity99.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 5, 1, 2, 1, 0.1);
 			}
 			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:slime")) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 0, 4));
+					_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 0,
+							(int) (4 * (entity instanceof LivingEntity _livingEntity103 && _livingEntity103.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity103.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.ITEM_SLIME, x, y, z, 5, 1, 2, 1, 0.1);
 			}
 			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:cave_spider")) {
-				if (entity instanceof LivingEntity _livEnt99 && _livEnt99.hasEffect(MobEffects.POISON)) {
+				if (entity instanceof LivingEntity _livEnt107 && _livEnt107.hasEffect(MobEffects.POISON)) {
 					if (entity instanceof LivingEntity _entity)
 						_entity.removeEffect(MobEffects.POISON);
 				}
@@ -212,10 +234,19 @@ public class PassiveProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 4));
+								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100,
+										(int) ((4 - (entityiterator instanceof LivingEntity _livingEntity111 && _livingEntity111.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+												? _livingEntity111.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+												: 0))
+												* (entity instanceof LivingEntity _livingEntity112 && _livingEntity112.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+														? _livingEntity112.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+														: 0))));
 						} else {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 0, 2));
+								_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 0,
+										(int) (2 * (entity instanceof LivingEntity _livingEntity114 && _livingEntity114.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+												? _livingEntity114.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+												: 0))));
 						}
 					}
 				}
@@ -227,7 +258,13 @@ public class PassiveProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 1));
+								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100,
+										(int) ((1 - (entityiterator instanceof LivingEntity _livingEntity119 && _livingEntity119.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+												? _livingEntity119.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+												: 0))
+												* (entity instanceof LivingEntity _livingEntity120 && _livingEntity120.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+														? _livingEntity120.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+														: 0))));
 						}
 					}
 				}

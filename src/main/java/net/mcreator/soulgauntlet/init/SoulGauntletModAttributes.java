@@ -15,6 +15,7 @@ import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.EntityType;
 
 import net.mcreator.soulgauntlet.SoulGauntletMod;
 
@@ -22,10 +23,12 @@ import net.mcreator.soulgauntlet.SoulGauntletMod;
 public class SoulGauntletModAttributes {
 	public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, SoulGauntletMod.MODID);
 	public static final RegistryObject<Attribute> SOULRESISTANCE = REGISTRY.register("soulresistance", () -> new RangedAttribute("attribute.soul_gauntlet.soulresistance", 0, 0, 1000).setSyncable(true));
+	public static final RegistryObject<Attribute> EVOLUTION_OF_SOULS = REGISTRY.register("evolution_of_souls", () -> new RangedAttribute("attribute.soul_gauntlet.evolution_of_souls", 1, 0, 1).setSyncable(true));
 
 	@SubscribeEvent
 	public static void addAttributes(EntityAttributeModificationEvent event) {
 		event.getTypes().forEach(entity -> event.add(entity, SOULRESISTANCE.get()));
+		event.add(EntityType.PLAYER, EVOLUTION_OF_SOULS.get());
 	}
 
 	@Mod.EventBusSubscriber
@@ -35,6 +38,7 @@ public class SoulGauntletModAttributes {
 			Player oldPlayer = event.getOriginal();
 			Player newPlayer = event.getEntity();
 			newPlayer.getAttribute(SOULRESISTANCE.get()).setBaseValue(oldPlayer.getAttribute(SOULRESISTANCE.get()).getBaseValue());
+			newPlayer.getAttribute(EVOLUTION_OF_SOULS.get()).setBaseValue(oldPlayer.getAttribute(EVOLUTION_OF_SOULS.get()).getBaseValue());
 		}
 	}
 }

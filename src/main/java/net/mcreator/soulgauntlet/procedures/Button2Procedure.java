@@ -60,7 +60,13 @@ public class Button2Procedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 100, 255));
+							_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 100,
+									(int) ((255 - (entityiterator instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+											? _livingEntity9.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+											: 0))
+											* (entity instanceof LivingEntity _livingEntity10 && _livingEntity10.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+													? _livingEntity10.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+													: 0))));
 					}
 				}
 			}
@@ -232,16 +238,15 @@ public class Button2Procedure {
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt68 && _livEnt68.getMobType() == MobType.UNDEAD)) {
-							if (!(3 - (entityiterator instanceof LivingEntity _livingEntity69 && _livingEntity69.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
-									? _livingEntity69.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
-									: 0) <= 0)) {
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(SoulGauntletModMobEffects.HEAVY_EYES.get(), 100,
-											(int) (3 - (entityiterator instanceof LivingEntity _livingEntity70 && _livingEntity70.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
-													? _livingEntity70.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
-													: 0))));
-							}
+						if (!(entityiterator instanceof LivingEntity _livEnt70 && _livEnt70.getMobType() == MobType.UNDEAD)) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(SoulGauntletModMobEffects.HEAVY_EYES.get(), 100,
+										(int) ((3 - (entityiterator instanceof LivingEntity _livingEntity71 && _livingEntity71.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+												? _livingEntity71.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+												: 0))
+												* (entity instanceof LivingEntity _livingEntity72 && _livingEntity72.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+														? _livingEntity72.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+														: 0))));
 						}
 					}
 				}

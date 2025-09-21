@@ -12,6 +12,7 @@
   "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
   "Soul_Collector": "§bClaimed Souls:§d ",
   "item.soul_gauntlet.soulgem": "Soul Gem",
+  "attribute.soul_gauntlet.evolution_of_souls": "Evolution Of Souls",
   "gamerule.stealChance.description": "Modify chances of gaining skills",
   "item_group.soul_gauntlet.soul_gauntlet_itens": "Soul Gauntlet",
   "gui.soul_gauntlet.soul_gauntlet_interface.button_slot2": "",

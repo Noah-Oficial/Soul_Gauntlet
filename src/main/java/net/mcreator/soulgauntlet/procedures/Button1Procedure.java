@@ -47,7 +47,13 @@ public class Button1Procedure {
 		}
 		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:chicken")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100,
+						(int) ((1 - (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+								? _livingEntity11.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+								: 0))
+								* (entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+										? _livingEntity12.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+										: 0))));
 		}
 		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:cave_spider")) {
 			if (world instanceof Level _level) {
@@ -60,7 +66,13 @@ public class Button1Procedure {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.SCULK_CHARGE_POP, x, y, z, 50, 1, 1, 1, 0.5);
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 4));
+				_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 100,
+						(int) ((4 - (entity instanceof LivingEntity _livingEntity18 && _livingEntity18.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+								? _livingEntity18.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+								: 0))
+								* (entity instanceof LivingEntity _livingEntity19 && _livingEntity19.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+										? _livingEntity19.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+										: 0))));
 		}
 		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:dolphin")) {
 			{
@@ -90,12 +102,24 @@ public class Button1Procedure {
 		}
 		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:slime")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 4));
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100,
+						(int) ((4 - (entity instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+								? _livingEntity34.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+								: 0))
+								* (entity instanceof LivingEntity _livingEntity35 && _livingEntity35.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+										? _livingEntity35.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+										: 0))));
 		}
 		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:warden")) {
-			if (entity instanceof LivingEntity _livEnt33 && _livEnt33.isBaby()) {
+			if (entity instanceof LivingEntity _livEnt39 && _livEnt39.isBaby()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 60, 10));
+					_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 60,
+							(int) ((10 - (entity instanceof LivingEntity _livingEntity40 && _livingEntity40.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+									? _livingEntity40.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+									: 0))
+									* (entity instanceof LivingEntity _livingEntity41 && _livingEntity41.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+											? _livingEntity41.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+											: 0))));
 			}
 			if (entity.isInWaterRainOrBubble()) {
 				if (world instanceof ServerLevel _level) {
@@ -107,12 +131,20 @@ public class Button1Procedure {
 			if (entity.isSprinting()) {
 				entity.setSprinting(false);
 			}
-			if (entity instanceof LivingEntity _livEnt39 && _livEnt39.isBlocking()) {
+			if (entity instanceof LivingEntity _livEnt47 && _livEnt47.isBlocking()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.HARM, 0, 2));
+					_entity.addEffect(new MobEffectInstance(MobEffects.HARM, 0,
+							(int) ((2 - (entity instanceof LivingEntity _livingEntity48 && _livingEntity48.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+									? _livingEntity48.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+									: 0))
+									* (entity instanceof LivingEntity _livingEntity49 && _livingEntity49.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+											? _livingEntity49.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+											: 0))));
 			}
 			if (entity.isUnderWater()) {
-				entity.setAirSupply((int) (entity.getAirSupply() - 1));
+				entity.setAirSupply((int) (entity.getAirSupply() - (1 - (entity instanceof LivingEntity _livingEntity53 && _livingEntity53.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+						? _livingEntity53.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+						: 0))));
 			}
 			if (new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -129,16 +161,15 @@ public class Button1Procedure {
 			}
 		}
 		if ((itemstack.getOrCreateTag().getString("Power")).equals("minecraft:sheep")) {
-			if (!(entity instanceof LivingEntity _livEnt48 && _livEnt48.getMobType() == MobType.UNDEAD)) {
-				if (!(3 - (entity instanceof LivingEntity _livingEntity49 && _livingEntity49.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
-						? _livingEntity49.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
-						: 0) <= 0)) {
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(SoulGauntletModMobEffects.HEAVY_EYES.get(), 100,
-								(int) (3 - (entity instanceof LivingEntity _livingEntity50 && _livingEntity50.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
-										? _livingEntity50.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
-										: 0))));
-				}
+			if (!(entity instanceof LivingEntity _livEnt59 && _livEnt59.getMobType() == MobType.UNDEAD)) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(SoulGauntletModMobEffects.HEAVY_EYES.get(), 100,
+							(int) ((3 - (entity instanceof LivingEntity _livingEntity60 && _livingEntity60.getAttributes().hasAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get())
+									? _livingEntity60.getAttribute(SoulGauntletModAttributes.SOULRESISTANCE.get()).getBaseValue()
+									: 0))
+									* (entity instanceof LivingEntity _livingEntity61 && _livingEntity61.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+											? _livingEntity61.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+											: 0))));
 			}
 		}
 	}

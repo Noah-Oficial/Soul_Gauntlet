@@ -1050,6 +1050,17 @@
         "files": []
       },
       "path": "~/Attributos"
+    },
+    {
+      "name": "EvolutionOfSouls",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "evolution_of_souls",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Attributos"
     }
   ],
   "variable_elements": [
@@ -1087,6 +1098,7 @@
       "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
       "Soul_Collector": "§bClaimed Souls:§d ",
       "item.soul_gauntlet.soulgem": "Soul Gem",
+      "attribute.soul_gauntlet.evolution_of_souls": "Evolution Of Souls",
       "gamerule.stealChance.description": "Modify chances of gaining skills",
       "item_group.soul_gauntlet.soul_gauntlet_itens": "Soul Gauntlet",
       "gui.soul_gauntlet.soul_gauntlet_interface.button_slot2": "",
@@ -1119,6 +1131,7 @@
       "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
       "Soul_Collector": "§bAlmas Coletadas:§d ",
       "item.soul_gauntlet.soulgem": "Soul Gem",
+      "attribute.soul_gauntlet.evolution_of_souls": "Evolution Of Souls",
       "item_group.soul_gauntlet.soul_gauntlet_itens": "Soul Gauntlet",
       "gamerule.stealChance.description": "Modify chances of gaining skills",
       "gui.soul_gauntlet.soul_gauntlet_interface.button_slot2": "",
@@ -1202,7 +1215,12 @@
         "children": [
           {
             "name": "Soul_Gauntlet",
-            "children": []
+            "children": [
+              {
+                "name": "Soul_Gauntlet_Upgrades",
+                "children": []
+              }
+            ]
           },
           {
             "name": "Outros",
