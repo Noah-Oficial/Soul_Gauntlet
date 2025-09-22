@@ -269,6 +269,34 @@ public class PassiveProcedure {
 					}
 				}
 			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:enderman")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 100,
+							(int) (4 * (entity instanceof LivingEntity _livingEntity124 && _livingEntity124.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity124.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:rabbit")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 0,
+							(int) (2 * (entity instanceof LivingEntity _livingEntity127 && _livingEntity127.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity127.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:bee")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 0,
+							(int) (1 * (entity instanceof LivingEntity _livingEntity130 && _livingEntity130.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity130.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
+			}
+			if ((Manopla.getOrCreateTag().getString("Power")).equals("minecraft:turtle")) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 0,
+							(int) (1 * (entity instanceof LivingEntity _livingEntity133 && _livingEntity133.getAttributes().hasAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get())
+									? _livingEntity133.getAttribute(SoulGauntletModAttributes.EVOLUTION_OF_SOULS.get()).getBaseValue()
+									: 0))));
+			}
 		}
 		return true;
 	}

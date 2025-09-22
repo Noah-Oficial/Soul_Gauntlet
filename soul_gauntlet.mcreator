@@ -1061,6 +1061,38 @@
         "files": []
       },
       "path": "~/Attributos"
+    },
+    {
+      "name": "Dismemberment",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dismemberment",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/soul_gauntlet/damage_type/dismemberment.json"
+        ]
+      },
+      "path": "~/Tipos De Dano"
+    },
+    {
+      "name": "PlayerAdd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_add",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/soulgauntlet/procedures/PlayerAddProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedimentos/PlayerConfig"
     }
   ],
   "variable_elements": [
@@ -1096,6 +1128,7 @@
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot1": "Slot1",
       "item.soul_gauntlet.savior_spawn_egg": "Savior Spawn Egg",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
+      "death.attack.dismemberment.item": "%1$s ???",
       "Soul_Collector": "§bClaimed Souls:§d ",
       "item.soul_gauntlet.soulgem": "Soul Gem",
       "attribute.soul_gauntlet.evolution_of_souls": "Evolution Of Souls",
@@ -1114,8 +1147,10 @@
       "effect.soul_gauntlet.heavy_eyes": "Heavy Eyes",
       "item.soul_gauntlet.gauntletdamaged": "Gauntlet Damaged",
       "gui.soul_gauntlet.soul_gauntlet_interface.button_slot": "Slot 1",
+      "death.attack.dismemberment": "%1$s lost a part of himself",
       "gui.soul_gauntlet.soul_gauntlet_remove_powers.button_slot1": "",
-      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": ""
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": "",
+      "death.attack.dismemberment.player": "%2$s  Left a part of himself for %1$s"
     },
     "pt_br": {
       "item.soul_gauntlet.soulgauntlet": "Soul Gauntlet",
@@ -1129,6 +1164,7 @@
       "gui.soul_gauntlet.soul_gauntlet_interface.label_slot1": "Slot1",
       "item.soul_gauntlet.savior_spawn_egg": "Savior Spawn Egg",
       "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
+      "death.attack.dismemberment.item": "%1$s ???",
       "Soul_Collector": "§bAlmas Coletadas:§d ",
       "item.soul_gauntlet.soulgem": "Soul Gem",
       "attribute.soul_gauntlet.evolution_of_souls": "Evolution Of Souls",
@@ -1147,8 +1183,10 @@
       "effect.soul_gauntlet.heavy_eyes": "Heavy Eyes",
       "item.soul_gauntlet.gauntletdamaged": "Soul Gauntlet",
       "gui.soul_gauntlet.soul_gauntlet_interface.button_slot": "Slot 1",
+      "death.attack.dismemberment": "%1$s lost a part of himself",
       "gui.soul_gauntlet.soul_gauntlet_remove_powers.button_slot1": "",
-      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": ""
+      "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": "",
+      "death.attack.dismemberment.player": "%2$s  Left a part of himself for %1$s"
     }
   },
   "foldersRoot": {
@@ -1185,6 +1223,10 @@
           },
           {
             "name": "Efeitos",
+            "children": []
+          },
+          {
+            "name": "PlayerConfig",
             "children": []
           }
         ]
@@ -1267,6 +1309,10 @@
       },
       {
         "name": "Attributos",
+        "children": []
+      },
+      {
+        "name": "Tipos De Dano",
         "children": []
       }
     ]

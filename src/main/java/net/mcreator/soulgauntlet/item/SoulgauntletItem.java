@@ -105,11 +105,6 @@ public class SoulgauntletItem extends Item implements GeoItem {
 	}
 
 	@Override
-	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-		return 0F;
-	}
-
-	@Override
 	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
 		if (equipmentSlot == EquipmentSlot.MAINHAND) {
 			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
@@ -119,6 +114,11 @@ public class SoulgauntletItem extends Item implements GeoItem {
 			return builder.build();
 		}
 		return super.getDefaultAttributeModifiers(equipmentSlot);
+	}
+
+	@Override
+	public boolean isCorrectToolForDrops(BlockState state) {
+		return true;
 	}
 
 	@Override

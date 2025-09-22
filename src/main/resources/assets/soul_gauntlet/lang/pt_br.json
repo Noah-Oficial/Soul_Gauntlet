@@ -10,6 +10,7 @@
   "gui.soul_gauntlet.soul_gauntlet_interface.label_slot1": "Slot1",
   "item.soul_gauntlet.savior_spawn_egg": "Savior Spawn Egg",
   "gui.soul_gauntlet.soul_gauntlet_interface.label_nbtslot1": "%nbt:Slot1%",
+  "death.attack.dismemberment.item": "%1$s ???",
   "Soul_Collector": "§bAlmas Coletadas:§d ",
   "item.soul_gauntlet.soulgem": "Soul Gem",
   "attribute.soul_gauntlet.evolution_of_souls": "Evolution Of Souls",
@@ -28,6 +29,8 @@
   "effect.soul_gauntlet.heavy_eyes": "Heavy Eyes",
   "item.soul_gauntlet.gauntletdamaged": "Soul Gauntlet",
   "gui.soul_gauntlet.soul_gauntlet_interface.button_slot": "Slot 1",
+  "death.attack.dismemberment": "%1$s lost a part of himself",
   "gui.soul_gauntlet.soul_gauntlet_remove_powers.button_slot1": "",
-  "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": ""
+  "gui.soul_gauntlet.soul_gauntlet_interface.button_slot1": "",
+  "death.attack.dismemberment.player": "%2$s  Left a part of himself for %1$s"
 }
